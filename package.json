@@ -13,9 +13,16 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.426.0",
+<<<<<<< HEAD
     "next": "^14.2.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+=======
+    "next": "14.2.5",
+    "query-string": "^9.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+>>>>>>> 83427220e97ee3f6d31ad3af04afd8f3dd66fb23
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
