@@ -155,7 +155,7 @@
 
   /* Right sidebar */
   .right-sidebar {
-    @apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex w-[355px] xl:overflow-y-scroll !important;
+    @apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex min-w-[300px] 2xl:xl:min-w-[355px] xl:overflow-y-scroll !important;
   }
 
   .profile-banner {
@@ -164,7 +164,7 @@
 
   .profile {
     @apply relative flex px-6 max-xl:justify-center;
-  }
+  } 
 
   .profile-img {
     @apply flex-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile;
@@ -281,7 +281,7 @@
 
   .form-item {
     @apply flex flex-col gap-1.5;
-  }
+  }  
 
   .form-label {
     @apply text-14 w-full max-w-[280px] font-medium text-gray-700;
@@ -357,10 +357,6 @@
 
   .footer_image {
     @apply relative size-5 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:items-center;
-  }
-
-  .footer_image-mobile {
-    @apply relative size-5;
   }
 
   /* Sidebar */

@@ -46,33 +46,31 @@ const AuthForm = ({ type }: { type: string }) => {
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setisLoading(true);
 
-    try{
-      // Sign up with Appwrite & create plaid token
-      if(type === 'sign-up'){
-        const newUser = await signUp(data);
+    // try{
+    //   // Sign up with Appwrite & create plaid token
+    //   if(type === 'sign-up'){
+    //     const newUser = await signUp(data);
 
-        setUser(newUser);
-      }
+    //     setUser(newUser);
+    //   }
       
 
       if(type === 'sign-in'){
         const response = await signIn(
-          {
           email: data.email,
           password: data.password,
-          }
         )
         if(response) router.push('/')
       }
 
-      console.log(data)
-      setisLoading(false);
+    //   console.log(data)
+    //   setisLoading(false);
 
-    } catch(error){
-      console.log(error)
-    } finally{
-      setisLoading(false);
-    }
+    // } catch(error){
+    //   console.log(error)
+    // } finally{
+    //   setisLoading(false);
+    // }
   }
 
   return (
