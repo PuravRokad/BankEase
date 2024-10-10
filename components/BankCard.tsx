@@ -27,8 +27,8 @@ const BankCard = ({account, userName,showBalance = true}: CreditCardProps) => {
                     </h2>
                 </div>
                 <p className='text-14 font-semibond tracking-[1.1px] text-white'>
-                    **** **** **** <span className='text-16'>
-                        ₹{account.mask}
+                    **** **** **** **** <span className='text-16'>
+                        ₹1234
                     </span>
 
                 </p>
@@ -37,7 +37,7 @@ const BankCard = ({account, userName,showBalance = true}: CreditCardProps) => {
 
         </div>
 
-        <div className='bank-card_icon'>
+        <div className="bank-card_icon">
             <Image
                 src='/icons/Paypass.svg'
                 width={20}
@@ -49,9 +49,18 @@ const BankCard = ({account, userName,showBalance = true}: CreditCardProps) => {
                 width={45}
                 height={32}
                 alt="mastercard"
+                className='ml-5'
             />
         </div>
+        <Image
+            src="/icons/lines.png"
+            width={316}
+            height={190}
+            alt='lines'
+            className='absolute top-0 left-0'
+        />
         </Link> 
+        {/* Copy */}
     </div>
   )
 }
