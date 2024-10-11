@@ -12,7 +12,7 @@ const Home = () => {
                 <HeaderBox 
                 type="greeting"
                 title="Welcome"
-                user={loggedIn? loggedIn.firstname : "Guest"}
+                user={loggedIn? loggedIn.firstName : "Guest"}
                 subtext="Access and manage your account and transaction efficiently."
                 />
             
