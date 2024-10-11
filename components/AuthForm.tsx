@@ -28,7 +28,7 @@ import { signIn, signUp } from '@/lib/actions/user.actions';
 
 
 const AuthForm = ({ type }: { type: string }) => {
-  const router = useRouter
+  const router = useRouter();
   const [user, setUser] = useState(null);
   const [isLoading, setisLoading] = useState(false);
 
@@ -76,7 +76,7 @@ const AuthForm = ({ type }: { type: string }) => {
   }
 
   return (
-    <section className='auth-form'>
+    <section className='auth-form justify-center'>
       <header className='flex flex-col gap-5 md:gap-8'>
         <Link href='/' className="cursor-pointer flex items-center gap-1">
           <Image

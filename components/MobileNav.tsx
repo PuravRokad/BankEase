@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Footer from "./Footer";
 
 interface MobileNavProps {
   user: any;
@@ -37,25 +38,25 @@ const MobileNav = ({ user }: MobileNavProps) => {
         </SheetTrigger>
         <SheetContent side="left" className="border-none bg-white">
           {/* <nav className="flex flex-col gap-4"> */}
-            <Link
-              href="/"
-              className="cursor-pointer flex items-center gap-1 px-4"
-            >
-              <Image src="/icons/logo.svg" width={34} height={34} alt="logo" />
-              <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
-                BankEase
-              </h1>
-            </Link>
-            <div className="mobilenav-sheet">
-              <SheetClose asChild>
-                <nav className="flex h-full flex-col gap-6 pt-16 text-white">
-                  {sidebarLinks.map((item) => {
-                    const isActive =
-                      pathname === item.route ||
-                      pathname.startsWith(`${item.route}/`);
+          <Link
+            href="/"
+            className="cursor-pointer flex items-center gap-1 px-4"
+          >
+            <Image src="/icons/logo.svg" width={34} height={34} alt="logo" />
+            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
+              BankEase
+            </h1>
+          </Link>
+          <div className="mobilenav-sheet">
+            <SheetClose asChild>
+              <nav className="flex h-full flex-col gap-6 pt-16 text-white">
+                {sidebarLinks.map((item) => {
+                  const isActive =
+                    pathname === item.route ||
+                    pathname.startsWith(`${item.route}/`);
 
-                    return (
-                      <SheetClose asChild key={item.route}> 
+                  return (
+                    <SheetClose asChild key={item.route}>
                       <Link
                         href={item.route}
                         key={item.label}
@@ -70,7 +71,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                             alt={item.label}
                             width={20}
                             height={20}
-                          
+
                             className={cn({
                               "brightness-[3] invert-0": isActive,
                             })}
@@ -85,17 +86,17 @@ const MobileNav = ({ user }: MobileNavProps) => {
                         </p>
                       </Link>
 
-                      </SheetClose>
-                      
-                    );
-                  })}
-                  USER
-                </nav>
-              </SheetClose>
-            </div>
+                    </SheetClose>
+
+                  );
+                })}
+                USER
+              </nav>
+            </SheetClose>
+            <Footer user={user} type='mobile'/>
+          </div>
           {/* </nav>{" "} */}
 
-          FOOTER
         </SheetContent>
       </Sheet>
     </section>
