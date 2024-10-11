@@ -28,7 +28,7 @@ import { signIn, signUp } from '@/lib/actions/user.actions';
 
 
 const AuthForm = ({ type }: { type: string }) => {
-  const router = useRouter
+  const router = useRouter();
   const [user, setUser] = useState(null);
   const [isLoading, setisLoading] = useState(false);
 
@@ -46,13 +46,13 @@ const AuthForm = ({ type }: { type: string }) => {
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setisLoading(true);
 
-    // try{
-    //   // Sign up with Appwrite & create plaid token
-    //   if(type === 'sign-up'){
-    //     const newUser = await signUp(data);
+    try{
+      // Sign up with Appwrite & create plaid token
+      if(type === 'sign-up'){
+        const newUser = await signUp(data);
 
-    //     setUser(newUser);
-    //   }
+        setUser(newUser);
+      }
       
 
       if(type === 'sign-in'){
@@ -65,18 +65,18 @@ const AuthForm = ({ type }: { type: string }) => {
         if(response) router.push('/')
       }
 
-    //   console.log(data)
-    //   setisLoading(false);
+      console.log(data)
+      setisLoading(false);
 
-    // } catch(error){
-    //   console.log(error)
-    // } finally{
-    //   setisLoading(false);
-    // }
+    } catch(error){
+      console.log(error)
+    } finally{
+      setisLoading(false);
+    }
   }
 
   return (
-    <section className='auth-form'>
+    <section className='auth-form justify-center'>
       <header className='flex flex-col gap-5 md:gap-8'>
         <Link href='/' className="cursor-pointer flex items-center gap-1">
           <Image
