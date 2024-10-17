@@ -28,7 +28,7 @@ const BankCard = ({account, userName,showBalance = true}: CreditCardProps) => {
                 </div>
                 <p className='text-14 font-semibond tracking-[1.1px] text-white'>
                     **** **** **** **** <span className='text-16'>
-                        ₹1234
+                        1234
                     </span>
 
                 </p>
